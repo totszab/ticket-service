@@ -3,6 +3,7 @@ package com.totszab.ticket_service.service.user;
 import com.totszab.ticket_service.dto.user.RegisterRequest;
 import com.totszab.ticket_service.entity.user.User;
 import com.totszab.ticket_service.exception.user.EmailAlreadyExistsException;
+import com.totszab.ticket_service.exception.user.UserNotFoundException;
 import com.totszab.ticket_service.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,5 +27,10 @@ public class UserService {
         user.setPasswordHash(passwordEncoder.encode(request.getPassword()));
 
         return userRepository.save(user);
+    }
+
+    public User findById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new UserNotFoundException(id));
     }
 }
