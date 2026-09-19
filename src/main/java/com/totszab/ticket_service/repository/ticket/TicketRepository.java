@@ -1,4 +1,4 @@
-package com.totszab.ticket_service.repository;
+package com.totszab.ticket_service.repository.ticket;
 
 import com.totszab.ticket_service.entity.ticket.Ticket;
 import com.totszab.ticket_service.entity.ticket.TicketPriority;

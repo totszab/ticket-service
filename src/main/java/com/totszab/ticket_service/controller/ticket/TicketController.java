@@ -1,4 +1,4 @@
-package com.totszab.ticket_service.controller;
+package com.totszab.ticket_service.controller.ticket;
 
 import com.totszab.ticket_service.dto.ticket.TicketCreateRequest;
 import com.totszab.ticket_service.dto.ticket.TicketResponse;
@@ -6,8 +6,8 @@ import com.totszab.ticket_service.dto.ticket.TicketUpdateRequest;
 import com.totszab.ticket_service.entity.ticket.Ticket;
 import com.totszab.ticket_service.entity.ticket.TicketPriority;
 import com.totszab.ticket_service.entity.ticket.TicketStatus;
-import com.totszab.ticket_service.mapper.TicketMapper;
-import com.totszab.ticket_service.service.TicketService;
+import com.totszab.ticket_service.mapper.ticket.TicketMapper;
+import com.totszab.ticket_service.service.ticket.TicketService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

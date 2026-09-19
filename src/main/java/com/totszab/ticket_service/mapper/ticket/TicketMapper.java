@@ -1,4 +1,4 @@
-package com.totszab.ticket_service.mapper;
+package com.totszab.ticket_service.mapper.ticket;
 
 import com.totszab.ticket_service.dto.ticket.TicketCreateRequest;
 import com.totszab.ticket_service.dto.ticket.TicketResponse;

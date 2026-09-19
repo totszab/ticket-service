@@ -1,10 +1,10 @@
-package com.totszab.ticket_service.service;
+package com.totszab.ticket_service.service.ticket;
 
 import com.totszab.ticket_service.entity.ticket.Ticket;
 import com.totszab.ticket_service.entity.ticket.TicketPriority;
 import com.totszab.ticket_service.entity.ticket.TicketStatus;
 import com.totszab.ticket_service.exception.TicketNotFoundException;
-import com.totszab.ticket_service.repository.TicketRepository;
+import com.totszab.ticket_service.repository.ticket.TicketRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
