@@ -1,9 +1,9 @@
 package com.totszab.ticket_service.mapper;
 
-import com.totszab.ticket_service.dto.TicketCreateRequest;
-import com.totszab.ticket_service.dto.TicketResponse;
-import com.totszab.ticket_service.dto.TicketUpdateRequest;
-import com.totszab.ticket_service.entity.Ticket;
+import com.totszab.ticket_service.dto.ticket.TicketCreateRequest;
+import com.totszab.ticket_service.dto.ticket.TicketResponse;
+import com.totszab.ticket_service.dto.ticket.TicketUpdateRequest;
+import com.totszab.ticket_service.entity.ticket.Ticket;
 
 public final class TicketMapper {
 

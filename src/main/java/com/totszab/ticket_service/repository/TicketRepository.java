@@ -1,8 +1,8 @@
 package com.totszab.ticket_service.repository;
 
-import com.totszab.ticket_service.entity.Ticket;
-import com.totszab.ticket_service.entity.TicketPriority;
-import com.totszab.ticket_service.entity.TicketStatus;
+import com.totszab.ticket_service.entity.ticket.Ticket;
+import com.totszab.ticket_service.entity.ticket.TicketPriority;
+import com.totszab.ticket_service.entity.ticket.TicketStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

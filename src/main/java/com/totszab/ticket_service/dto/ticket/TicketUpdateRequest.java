@@ -1,7 +1,7 @@
-package com.totszab.ticket_service.dto;
+package com.totszab.ticket_service.dto.ticket;
 
-import com.totszab.ticket_service.entity.TicketPriority;
-import com.totszab.ticket_service.entity.TicketStatus;
+import com.totszab.ticket_service.entity.ticket.TicketPriority;
+import com.totszab.ticket_service.entity.ticket.TicketStatus;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;

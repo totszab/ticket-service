@@ -1,8 +1,8 @@
 package com.totszab.ticket_service.service;
 
-import com.totszab.ticket_service.entity.Ticket;
-import com.totszab.ticket_service.entity.TicketPriority;
-import com.totszab.ticket_service.entity.TicketStatus;
+import com.totszab.ticket_service.entity.ticket.Ticket;
+import com.totszab.ticket_service.entity.ticket.TicketPriority;
+import com.totszab.ticket_service.entity.ticket.TicketStatus;
 import com.totszab.ticket_service.exception.TicketNotFoundException;
 import com.totszab.ticket_service.repository.TicketRepository;
 import lombok.RequiredArgsConstructor;

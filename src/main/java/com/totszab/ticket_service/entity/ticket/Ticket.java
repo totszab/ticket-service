@@ -1,4 +1,4 @@
-package com.totszab.ticket_service.entity;
+package com.totszab.ticket_service.entity.ticket;
 
 import jakarta.persistence.*;
 import lombok.Getter;
