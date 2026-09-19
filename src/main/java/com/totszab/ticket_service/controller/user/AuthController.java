@@ -1,5 +1,7 @@
 package com.totszab.ticket_service.controller.user;
 
+import com.totszab.ticket_service.dto.user.AuthResponse;
+import com.totszab.ticket_service.dto.user.LoginRequest;
 import com.totszab.ticket_service.dto.user.RegisterRequest;
 import com.totszab.ticket_service.dto.user.UserResponse;
 import com.totszab.ticket_service.entity.user.User;
@@ -25,5 +27,11 @@ public class AuthController {
     public ResponseEntity<UserResponse> register(@Valid @RequestBody RegisterRequest request) {
         User created = userService.register(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(UserMapper.toResponse(created));
+    }
+
+    @PostMapping("/login")
+    public AuthResponse login(@Valid @RequestBody LoginRequest request) {
+        String token = userService.login(request);
+        return new AuthResponse(token);
     }
 }
