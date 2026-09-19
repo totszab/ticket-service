@@ -48,4 +48,12 @@ public class UserService {
         return userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(id));
     }
+
+    public User getCurrentUser() {
+        String email = org.springframework.security.core.context.SecurityContextHolder
+                .getContext().getAuthentication().getName();
+
+        return userRepository.findByEmail(email)
+                .orElseThrow(InvalidCredentialsException::new);
+    }
 }

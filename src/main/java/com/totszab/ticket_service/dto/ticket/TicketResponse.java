@@ -18,6 +18,10 @@ public class TicketResponse {
     private String description;
     private TicketStatus status;
     private TicketPriority priority;
+    private Long createdById;
+    private String createdByName;
+    private Long assignedToId;
+    private String assignedToName;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 }

@@ -1,5 +1,6 @@
 package com.totszab.ticket_service.entity.ticket;
 
+import com.totszab.ticket_service.entity.user.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -49,4 +50,12 @@ public class Ticket {
         updatedAt = LocalDateTime.now();
 
     }
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "created_by_id", nullable = false)
+    private User createdBy;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "assigned_to_id")
+    private User assignedTo;
 }

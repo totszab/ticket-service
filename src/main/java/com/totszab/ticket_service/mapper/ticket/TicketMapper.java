@@ -28,14 +28,25 @@ public final class TicketMapper {
     }
 
     public static TicketResponse toResponse(Ticket ticket) {
-        return TicketResponse.builder()
+        TicketResponse.TicketResponseBuilder builder = TicketResponse.builder()
                 .id(ticket.getId())
                 .title(ticket.getTitle())
                 .description(ticket.getDescription())
                 .status(ticket.getStatus())
                 .priority(ticket.getPriority())
                 .createdAt(ticket.getCreatedAt())
-                .updatedAt(ticket.getUpdatedAt())
-                .build();
+                .updatedAt(ticket.getUpdatedAt());
+
+        if (ticket.getCreatedBy() != null) {
+            builder.createdById(ticket.getCreatedBy().getId())
+                    .createdByName(ticket.getCreatedBy().getName());
+        }
+
+        if (ticket.getAssignedTo() != null) {
+            builder.assignedToId(ticket.getAssignedTo().getId())
+                    .assignedToName(ticket.getAssignedTo().getName());
+        }
+
+        return builder.build();
     }
 }
