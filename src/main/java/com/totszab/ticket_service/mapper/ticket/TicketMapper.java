@@ -1,9 +1,9 @@
-package com.totszab.ticket_service.mapper;
+package com.totszab.ticket_service.mapper.ticket;
 
-import com.totszab.ticket_service.dto.TicketCreateRequest;
-import com.totszab.ticket_service.dto.TicketResponse;
-import com.totszab.ticket_service.dto.TicketUpdateRequest;
-import com.totszab.ticket_service.entity.Ticket;
+import com.totszab.ticket_service.dto.ticket.TicketCreateRequest;
+import com.totszab.ticket_service.dto.ticket.TicketResponse;
+import com.totszab.ticket_service.dto.ticket.TicketUpdateRequest;
+import com.totszab.ticket_service.entity.ticket.Ticket;
 
 public final class TicketMapper {
 
@@ -28,14 +28,25 @@ public final class TicketMapper {
     }
 
     public static TicketResponse toResponse(Ticket ticket) {
-        return TicketResponse.builder()
+        TicketResponse.TicketResponseBuilder builder = TicketResponse.builder()
                 .id(ticket.getId())
                 .title(ticket.getTitle())
                 .description(ticket.getDescription())
                 .status(ticket.getStatus())
                 .priority(ticket.getPriority())
                 .createdAt(ticket.getCreatedAt())
-                .updatedAt(ticket.getUpdatedAt())
-                .build();
+                .updatedAt(ticket.getUpdatedAt());
+
+        if (ticket.getCreatedBy() != null) {
+            builder.createdById(ticket.getCreatedBy().getId())
+                    .createdByName(ticket.getCreatedBy().getName());
+        }
+
+        if (ticket.getAssignedTo() != null) {
+            builder.assignedToId(ticket.getAssignedTo().getId())
+                    .assignedToName(ticket.getAssignedTo().getName());
+        }
+
+        return builder.build();
     }
 }

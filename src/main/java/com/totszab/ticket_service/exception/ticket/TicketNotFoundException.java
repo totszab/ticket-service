@@ -1,4 +1,4 @@
-package com.totszab.ticket_service.exception;
+package com.totszab.ticket_service.exception.ticket;
 
 public class TicketNotFoundException extends RuntimeException {
 

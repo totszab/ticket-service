@@ -1,10 +1,11 @@
-package com.totszab.ticket_service.service;
+package com.totszab.ticket_service.service.ticket;
 
-import com.totszab.ticket_service.entity.Ticket;
-import com.totszab.ticket_service.entity.TicketPriority;
-import com.totszab.ticket_service.entity.TicketStatus;
-import com.totszab.ticket_service.exception.TicketNotFoundException;
-import com.totszab.ticket_service.repository.TicketRepository;
+import com.totszab.ticket_service.entity.ticket.Ticket;
+import com.totszab.ticket_service.entity.ticket.TicketPriority;
+import com.totszab.ticket_service.entity.ticket.TicketStatus;
+import com.totszab.ticket_service.exception.ticket.TicketNotFoundException;
+import com.totszab.ticket_service.repository.ticket.TicketRepository;
+import com.totszab.ticket_service.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,7 @@ import java.util.List;
 public class TicketService {
 
     private final TicketRepository ticketRepository;
+    private final UserService userService;
 
     public List<Ticket> findAll() {
         return ticketRepository.findAll();
@@ -26,6 +28,7 @@ public class TicketService {
     }
 
     public Ticket create(Ticket ticket) {
+        ticket.setCreatedBy(userService.getCurrentUser());
         return ticketRepository.save(ticket);
     }
 
